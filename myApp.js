@@ -1,8 +1,11 @@
 let express = require('express');
+let bodyParser = require('body-parser');
 let app = express();
 
 // To load environment variables
 require('dotenv').config();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
   console.log(req.method + ' ' + req.path + ' - ' + req.ip);
