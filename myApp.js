@@ -3,7 +3,6 @@ let app = express();
 
 // Serve Hello World to match the root /
 app.get('/', function (req, res) {
-  res.send('Hello Express');
-  res.end();
+  res.sendFile(__dirname + '/views/index.html');
 });
 module.exports = app;
