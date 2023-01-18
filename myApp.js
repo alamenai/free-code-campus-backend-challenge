@@ -24,6 +24,11 @@ app.get('/:word/echo', function (req, res) {
   const word = req.params.word;
   res.json({ echo: word });
 });
+app.get('/name', function (req, res) {
+  const queryObject = req.query;
+  res.json({ name: queryObject.firstname + ' ' + queryObject.lastname });
+});
+
 // Serve Hello World to match the root /
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
