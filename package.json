@@ -1,6 +1,7 @@
 {
 	"name": "fcc-learn-npm-package-json",
 	"author": "Menai Ala Eddine",
+	"description": "Learning backend development on Free Code Campus",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
