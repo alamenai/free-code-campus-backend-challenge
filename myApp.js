@@ -1,8 +1,7 @@
 require('dotenv').config();
-/** 1) Install & Set up mongoose */
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URI);
 
 /** 2) Create a 'Person' Model */
 var personSchema = new mongoose.Schema({
@@ -12,7 +11,7 @@ var personSchema = new mongoose.Schema({
 });
 
 /** 3) Create and Save a Person */
-var Person = mongoose.model('Person', personSchema);
+let Person = mongoose.model('Person', personSchema);
 
 var createAndSavePerson = function (done) {
   var janeFonda = new Person({
@@ -77,8 +76,8 @@ const queryChain = (done) => {
 
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
-//exports.PersonModel = Person;
-//exports.createAndSavePerson = createAndSavePerson;
+exports.PersonModel = Person;
+exports.createAndSavePerson = createAndSavePerson;
 exports.findPeopleByName = findPeopleByName;
 exports.findOneByFood = findOneByFood;
 exports.findPersonById = findPersonById;
