@@ -3,7 +3,7 @@ let app = express();
 
 // Serve Hello World to match the root /
 app.get('/', function (req, res) {
-  console.log('Hello Express');
+  res.send('Hello Express');
   res.end();
 });
 module.exports = app;
