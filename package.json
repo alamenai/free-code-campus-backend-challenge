@@ -4,7 +4,7 @@
   "description": "Learning backend development on Free Code Campus",
   "keywords": [
     "backend",
-    "node-development,expressjs,freecodecampus"
+    "node-development,expressjs,freecodecamp"
   ],
   "dependencies": {
     "express": "^4.14.0"
