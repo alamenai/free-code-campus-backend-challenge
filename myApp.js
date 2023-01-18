@@ -9,11 +9,22 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get(
+  '/now',
+  function (req, res, next) {
+    req.time = new Date().toString();
+    next();
+  },
+  function (req, res) {
+    res.json({ time: req.time });
+  }
+);
 // Serve Hello World to match the root /
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app;
 // Serve static assets
 app.use('/public', express.static(__dirname + '/public'));
 
