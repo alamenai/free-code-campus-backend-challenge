@@ -1,6 +1,9 @@
 let express = require('express');
 let app = express();
 
+// To load environment variables
+require('dotenv').config();
+
 // Serve Hello World to match the root /
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
@@ -14,6 +17,11 @@ app.get('/json', function (req, res) {
   const data = {
     message: 'Hello json',
   };
+  const messageStyle = process.env.MESSAGE_STYLE;
+  if (messageStyle === 'uppercase') {
+    data.message = data.message.toUpperCase();
+  }
+
   res.json(data);
 });
 module.exports = app;
