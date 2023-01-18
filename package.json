@@ -15,6 +15,7 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^16.0.1",
     "express": "^4.14.0",
+    "mongoose": "^5.11.15",
     "fcc-express-bground": "https://github.com/freeCodeCamp/fcc-express-bground-pkg.git"
   },
   "main": "server.js",
