@@ -9,4 +9,11 @@ app.get('/', function (req, res) {
 // Serve static assets
 app.use('/public', express.static(__dirname + '/public'));
 
+//
+app.get('/json', function (req, res) {
+  const data = {
+    message: 'Hello json',
+  };
+  res.json(data);
+});
 module.exports = app;
